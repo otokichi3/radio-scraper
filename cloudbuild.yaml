@@ -25,6 +25,6 @@ steps:
 substitutions:
   _FUNCTION_NAME: fm802-analysis
   _ENTRY_POINT: fm802_onair_info
-  _FMCOCOLO_FUNCTION_NAME: fm802-analysis
+  _FMCOCOLO_FUNCTION_NAME: fmcocolo-analysis
   _FMCOCOLO_ENTRY_POINT: fmcocoro_onair_info
   _COMMON_ENV: env.yaml
