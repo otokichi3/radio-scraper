@@ -9,21 +9,22 @@ steps:
       - --runtime=python37
       - --trigger-http
       - --project=$PROJECT_ID
-      - --env-vars-file=$_ENV_YAML
+      - --env-vars-file=$_COMMON_ENV
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     entrypoint: gcloud
     args:
       - functions
       - deploy
-      - $_FUNCTION_NAME
+      - $_FMCOCOLO_FUNCTION_NAME
       - --entry-point=$_FMCOCOLO_ENTRY_POINT
       - --runtime=python37
       - --trigger-http
       - --project=$PROJECT_ID
-      - --env-vars-file=$_ENV_YAML
+      - --env-vars-file=$_COMMON_ENV
 
 substitutions:
   _FUNCTION_NAME: fm802-analysis
   _ENTRY_POINT: fm802_onair_info
+  _FMCOCOLO_FUNCTION_NAME: fm802-analysis
   _FMCOCOLO_ENTRY_POINT: fmcocoro_onair_info
-  _ENV_YAML: env.yaml
+  _COMMON_ENV: env.yaml
